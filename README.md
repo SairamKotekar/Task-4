@@ -263,7 +263,17 @@ EDA Playground Simulation
 EPWave Waveform
         ↓
 Code ↔ Diagram ↔ Waveform Verification
+```
 
+```text
+# Conclusion
+
+The four FSM-based RTL designs — Moore FSM, Mealy FSM, Traffic Light Controller, and 1011 Sequence Detector — were successfully implemented using Verilog HDL.
+
+Each design was verified using a dedicated testbench and EPWave simulation. The observed waveforms were checked against the corresponding state diagrams and RTL code.
+
+This task provided practical experience in FSM design, Verilog RTL implementation, testbench development, simulation, and waveform-based verification, strengthening my understanding of digital and VLSI design concepts.
+```
 
 
 
