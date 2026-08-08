@@ -1,0 +1,42 @@
+module mealy_fsm(
+  input clk,reset,in,
+  output reg out
+);
+  reg state;
+  always @(posedge clk or posedge reset)
+    begin
+      if(reset)
+        begin
+          state <= 0;
+          out <= 0;
+        end
+      else
+        begin
+          case(state)
+            0:
+              begin
+                out <= 0;
+                if(in)
+                  state <= 1;
+              end
+            1:
+              begin
+                if(in)
+                  out <= 1;
+                else
+                  begin
+                    out <= 0;
+                    state <= 0;
+                  end
+              end
+            default:
+              begin
+                state <= 0;
+                out <= 0;
+              end
+          endcase
+        end
+    end
+endmodule
+                    
+              

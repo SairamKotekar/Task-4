@@ -1,0 +1,35 @@
+`timescale 1ns/1ps
+module moore_fsm_tb;
+  reg clk;
+  reg reset;
+  wire [1:0] state;
+  
+  moore_fsm uut(
+    .clk(clk),
+    .reset(reset),
+    .state(state)
+  );
+  
+  always #5 clk = ~clk;
+  
+  initial
+    begin
+      $dumpfile("dump.vcd");
+      $dumpvars(0, moore_fsm_tb);
+      clk = 0;
+      reset = 1;
+      #10 reset = 0;
+      #60;
+      $finish;
+    end
+  
+  initial 
+    begin
+      $monitor("Tiime=%0t Reset=%b State=%b", $time, reset, state);
+    end
+  
+endmodule
+      
+      
+  
+ 
