@@ -264,8 +264,24 @@ EPWave Waveform
         ↓
 Code ↔ Diagram ↔ Waveform Verification
 ```
-
+# Learning Outcomes
 ```text
+Through this task, I gained practical knowledge of:
+
+- Finite State Machine design
+- Moore FSM
+- Mealy FSM
+- State transitions
+- State encoding
+- Verilog RTL coding
+- Testbench development
+- Clock and reset handling
+- Traffic light controller design
+- Sequence detector design
+- EDA Playground simulation
+- EPWave waveform analysis
+- RTL verification
+```
 # Conclusion
 
 The four FSM-based RTL designs — Moore FSM, Mealy FSM, Traffic Light Controller, and 1011 Sequence Detector — were successfully implemented using Verilog HDL.
@@ -273,7 +289,7 @@ The four FSM-based RTL designs — Moore FSM, Mealy FSM, Traffic Light Controlle
 Each design was verified using a dedicated testbench and EPWave simulation. The observed waveforms were checked against the corresponding state diagrams and RTL code.
 
 This task provided practical experience in FSM design, Verilog RTL implementation, testbench development, simulation, and waveform-based verification, strengthening my understanding of digital and VLSI design concepts.
-```
+
 
 
 
