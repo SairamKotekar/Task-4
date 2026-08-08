@@ -99,19 +99,21 @@ In this task, I implemented and verified four different Finite State Machine (FS
    When the next input is 1, the complete 1011 pattern is detected and detected becomes HIGH.
    The design also supports overlapping detection by returning to S1.
 
-🔄 Design and Verification Flow
+## 🔄 Design and Verification Flow
+
+```text
 FSM Specification
-       ↓
+        ↓
 State Diagram
-       ↓
+        ↓
 Verilog RTL Design
-       ↓
+        ↓
 Testbench Development
-       ↓
+        ↓
 EDA Playground Simulation
-       ↓
+        ↓
 EPWave Waveform
-       ↓
+        ↓
 Code ↔ Diagram ↔ Waveform Verification
 
 
