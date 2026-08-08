@@ -33,8 +33,9 @@ The main objectives of this task are:
 
 ---
 
-# 📂 Repository Structure
+## 📂 Repository Structure
 
+```text
 Task-4/
 │
 ├── state diagrams/
@@ -49,17 +50,15 @@ Task-4/
 │   ├── sequence_detector.png
 │   └── traffic_light.png
 │
-├── moore_fsm.v
-├── moore_fsm_tb.v
-│
 ├── mealy_fsm.v
 ├── mealy_fsm_tb.v
-│
-├── traffic_light.v
-├── traffic_light_tb.v
-│
+├── moore_fsm.v
+├── moore_fsm_tb.v
 ├── sequence_detector.v
-└── sequence_detector_tb.v
+├── sequence_detector_tb.v
+├── traffic_light.v
+└── traffic_light_tb.v
+```
 
 In this task, I implemented and verified four different Finite State Machine (FSM) based RTL designs using Verilog HDL. Each design was developed using a state diagram, Verilog RTL code, testbench, and EPWave waveform simulation.
 
