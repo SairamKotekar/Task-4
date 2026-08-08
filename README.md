@@ -66,30 +66,28 @@ A Moore FSM is a Finite State Machine in which the output depends only on the cu
 
 The implemented Moore FSM contains three states:
 
-text
+```text
 S0 → S1 → S2 → S0
-
+```
 
 After reset, the FSM starts from State S0. On every positive edge of the clock, the FSM moves to the next state.
 
 The state sequence is:
 
-text
+```text
 S0 → S1
 S1 → S2
 S2 → S0
-
-
+```
 The waveform confirms that the FSM follows the expected state transitions.
 
 ### Files
 
-text
+```text
 moore_fsm.v
 moore_fsm_tb.v
+```
 
-
----
 
 ## 2. Mealy FSM
 
@@ -97,37 +95,35 @@ A Mealy FSM is a Finite State Machine in which the output depends on both the cu
 
 The implemented Mealy FSM uses two states:
 
-text
+```text
 S0 and S1
-
+```
 
 The important output condition is:
 
-text
+```text
 Current State = S1
 Input = 1
 Output = 1
-
+```
 
 The state transitions are:
 
-text
+```text
 S0 + 0 → S0
 S0 + 1 → S1
 S1 + 0 → S0
 S1 + 1 → S1
-
-
+```
 When the FSM reaches State S1 and the input is 1, the output becomes HIGH. The waveform verifies the expected state and output behavior.
 
 ### Files
 
-text
+```text
 mealy_fsm.v
 mealy_fsm_tb.v
+```
 
-
----
 
 ## 3. Traffic Light Controller
 
@@ -135,25 +131,24 @@ The Traffic Light Controller is a practical application of an FSM. It contains t
 
 The sequence is:
 
-text
+```text
 RED → GREEN → YELLOW → RED
-
+```
 
 ### State and Output Mapping
 
-text
+```text
 S0 → RED    → 3'b100
 S1 → GREEN  → 3'b001
 S2 → YELLOW → 3'b010
-
-
+```
 After reset, the controller starts in the RED state. It then changes to GREEN, followed by YELLOW, and finally returns to RED.
 
 The controller continuously repeats this cycle.
 
 ### State Flow
 
-text
+```text
         Reset
           ↓
       S0 (RED)
@@ -163,78 +158,73 @@ text
     S2 (YELLOW)
           ↓
       S0 (RED)
-
-
+```
 The EPWave waveform confirms the correct cyclic operation of the traffic light controller.
 
 ### Files
 
-text
+```text
 traffic_light.v
 traffic_light_tb.v
+```
 
-
----
 
 ## 4. 1011 Sequence Detector
 
 The Sequence Detector is designed to detect the serial binary pattern:
 
-text
+```text
 1011
-
-
+```
 The FSM uses four states to track the received portion of the sequence.
 
 ### State Description
 
-text
+```text
 S0 → No match
 S1 → 1
 S2 → 10
 S3 → 101
-
+```
 
 The state progression is:
 
-text
+```text
 S0 → S1 → S2 → S3
-
+```
 
 When the FSM is in State S3 and receives the final input 1, the complete sequence 1011 is detected.
 
 The output becomes:
 
-text
+```text
 detected = 1
-
-
+```
 The design also supports overlapping sequence detection by returning to State S1 after detection.
 
 ### Example
 
 For the input:
 
-text
+```text
 1 0 1 1
-
+```
 
 the FSM progresses as:
 
-text
+```text
 S0 → S1 → S2 → S3 → Detection
-
-
+```
 The EPWave waveform verifies that the detected signal becomes HIGH when the complete 1011 pattern is received.
 
 ### Files
 
-text
+```text
 sequence_detector.v
 sequence_detector_tb.v
+```
 
 
----
 
 # Waveform Verification
 
@@ -242,7 +232,7 @@ All four designs were simulated using EDA Playground and analyzed using EPWave.
 
 The waveforms were compared with the corresponding:
 
-text
+```text
 Verilog RTL Code
        ↓
 State Diagram
@@ -250,11 +240,9 @@ State Diagram
 Expected Output
        ↓
 Actual Waveform
-
-
+```
 The simulation results confirm the expected behavior of the FSM designs.
 
----
 
 # Testbench Verification
 
